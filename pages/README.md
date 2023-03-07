@@ -148,6 +148,24 @@
 
 
 
+## [六合数字](https://www.zhipin.com/job_detail/76df94905a4ef5221XF_0929EVRQ.html) / 面试 / 20230309
+
+**工作职责:**
+
+1. 参与公司产品的开发工作；
+2. 参与公司产品的前端的架构与设计；
+3. 解决产品开发过程中的技术难题，优化代码提升性能；
+4. 负责公司目前平台的前端迭代。
+5. 熟悉后端与数据库
+
+**任职要求:**
+
+1. 精通vue技术栈，践行[组件化开发模式](https://www.jianshu.com/p/8cd4981add3f)，熟悉后端；
+2. 熟悉[vue常用的技术栈](https://zhuanlan.zhihu.com/p/31161485/)，具备脚手架裁剪，定制改造的能力，[了解uniapp](https://uniapp.dcloud.net.cn/)；具备接口开发能力。
+3. [熟悉http](https://juejin.cn/post/7016593221815910408#heading-20)/[xml](https://blog.csdn.net/m0_53917137/article/details/116536895)/jon/webervice等网络通信技术，了解go语言后端原理；
+4. 熟悉Nginx容器，掌握自动化构建，发布工具优先，了解MongoDB；
+5. 有互联网数藏平台或数字经济相关开发经验优先；
+6. 工作积极主动，具有强烈的责任心，事业心，具有良好的沟通，协作能力。
 
 
 
@@ -188,14 +206,17 @@
 
 
 
-4. Vue2
+
+
+
+7. Vue2
    1. 生命周期
-5. Vue3
+8. Vue3
    1. 
-6. uniapp
-7. canvas
-8. svg
-9. WebSocket 
+9. uniapp
+10. canvas
+11. svg
+12. WebSocket 
 
 ### 简历中涉及的部分
 
