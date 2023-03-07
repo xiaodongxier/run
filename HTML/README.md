@@ -42,22 +42,6 @@ box-sizing 规定两个并排的带边框的框，语法为 box-sizing：content
 **inherit**：继承父元素的 box-sizing 值。
 
 
-
-## CSS 盒子模型
-
-CSS 盒模型本质上是一个盒子，它包括：边距，边框，填充和实际内容。CSS 中的盒子模型包括 IE 盒子模型和标准的 W3C 盒子模型。
-在标准的盒子模型中，`width 指 content 部分的宽度`。
-在 IE 盒子模型中，`width 表示 content+padding+border 这三个部分的宽度`。
-
-故在计算盒子的宽度时存在差异：
-
-**标准盒模型：** 一个块的总宽度 = width+margin(左右)+padding(左右)+border(左右)
-
-**怪异盒模型：** 一个块的总宽度 = width+margin（左右）（既 width 已经包含了 padding 和 border 值）
-
-
-
-
 ## 页面布局
 
 ### 1.Flex 布局
@@ -68,22 +52,22 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局",用来为盒状模型提�
 
 容器的属性：
 
-*   flex-direction：决定主轴的方向（即子 item 的排列方法）flex-direction: row | row-reverse | column | column-reverse;
-*   flex-wrap：决定换行规则 flex-wrap: nowrap | wrap | wrap-reverse;
-*   flex-flow： .box { flex-flow: || ; }
-*   justify-content：对其方式，水平主轴对齐方式
-*   align-items：对齐方式，竖直轴线方向
-*   align-content
+* flex-direction：决定主轴的方向（即子 item 的排列方法）flex-direction: row | row-reverse | column | column-reverse;
+* flex-wrap：决定换行规则 flex-wrap: nowrap | wrap | wrap-reverse;
+* flex-flow： .box { flex-flow: || ; }
+* justify-content：对其方式，水平主轴对齐方式
+* align-items：对齐方式，竖直轴线方向
+* align-content
 
 项目的属性（元素的属性）：
 
-*   order 属性：定义项目的排列顺序，顺序越小，排列越靠前，默认为 0
-*   flex-grow 属性：定义项目的放大比例，即使存在空间，也不会放大
-*   flex-shrink 属性：定义了项目的缩小比例，当空间不足的情况下会等比例的缩小，如果 定义个 item 的 flow-shrink 为 0，则为不缩小
-*   flex-basis 属性：定义了在分配多余的空间，项目占据的空间。
-*   flex：是 flex-grow 和 flex-shrink、flex-basis 的简写，默认值为 0 1 auto。
-*   align-self：允许单个项目与其他项目不一样的对齐方式，可以覆盖
-*   align-items，默认属 性为 auto，表示继承父元素的 align-items 比如说，用 flex 实现圣杯布局
+* order 属性：定义项目的排列顺序，顺序越小，排列越靠前，默认为 0
+* flex-grow 属性：定义项目的放大比例，即使存在空间，也不会放大
+* flex-shrink 属性：定义了项目的缩小比例，当空间不足的情况下会等比例的缩小，如果 定义个 item 的 flow-shrink 为 0，则为不缩小
+* flex-basis 属性：定义了在分配多余的空间，项目占据的空间。
+* flex：是 flex-grow 和 flex-shrink、flex-basis 的简写，默认值为 0 1 auto。
+* align-self：允许单个项目与其他项目不一样的对齐方式，可以覆盖
+* align-items，默认属 性为 auto，表示继承父元素的 align-items 比如说，用 flex 实现圣杯布局
 
 ### 2.Rem 布局
 
@@ -148,39 +132,6 @@ viewport适配的优缺点
 
 
 
-
-
-## 清除浮动的方式
-
-*  添加额外标签
-
-```html
-<div class="parent">
-    //添加额外标签并且添加clear属性
-    <div style="clear:both"></div>
-    //也可以加一个br标签
-</div>
-复制代码
-```
-
-*  父级添加overflow属性，或者设置高度
-*  建立伪类选择器清除浮动
-
-```css
-/* 在css中添加:after伪元素 */
-.parent:after{
-    /* 设置添加子元素的内容是空 */
-    content: '';
-    /* 设置添加子元素为块级元素 */
-    display: block;
-    /* 设置添加的子元素的高度0 */
-    height: 0;
-    /* 设置添加子元素看不见 */
-    visibility: hidden;
-    /* 设置clear：both */
-    clear: both;
-}
-```
 
 
 

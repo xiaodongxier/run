@@ -143,3 +143,55 @@ div:after{
 }
 ```
 
+
+
+
+## CSS 盒子模型
+
+CSS 盒模型本质上是一个盒子，它包括：边距，边框，填充和实际内容。CSS 中的盒子模型包括 IE 盒子模型和标准的 W3C 盒子模型。
+在标准的盒子模型中，`width 指 content 部分的宽度`。
+在 IE 盒子模型中，`width 表示 content+padding+border 这三个部分的宽度`。
+
+故在计算盒子的宽度时存在差异：
+
+**标准盒模型：** 一个块的总宽度 = width+margin(左右)+padding(左右)+border(左右)
+
+**怪异盒模型：** 一个块的总宽度 = width+margin（左右）（既 width 已经包含了 padding 和 border 值）
+
+
+
+
+
+
+
+## 清除浮动的方式
+
+*  添加额外标签
+
+```html
+<div class="parent">
+    //添加额外标签并且添加clear属性
+    <div style="clear:both"></div>
+    //也可以加一个br标签
+</div>
+复制代码
+```
+
+*  父级添加overflow属性，或者设置高度
+*  建立伪类选择器清除浮动
+
+```css
+/* 在css中添加:after伪元素 */
+.parent:after{
+    /* 设置添加子元素的内容是空 */
+    content: '';
+    /* 设置添加子元素为块级元素 */
+    display: block;
+    /* 设置添加的子元素的高度0 */
+    height: 0;
+    /* 设置添加子元素看不见 */
+    visibility: hidden;
+    /* 设置clear：both */
+    clear: both;
+}
+```
