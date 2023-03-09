@@ -220,9 +220,39 @@ Vue 判断两个节点是否相同时，主要是判断两者的`key`和`元素�
 *   7、脱离文档流之后进行的任何操作，都不会造成回流了，复杂操作的地方，不妨使用 position：absolute / fixed定位
 
 
+---
 
-## 
+---
 
+---
+
+---
+
+---
+
+
+## 生命周期
+
+https://gitcdn.xiaodongxier.com/pages/20221216181348.html
+
+- beforeCreate
+- created
+- brforeMount
+- mounted
+- beforeUpdate
+- updated
+- beforeDestory
+- destoryed
+
+## 计算属性(computed)，方法(methods)，侦听器(watch)
+
+methods > watch > computed
+
+计算属性(computed), 存在缓冲机制，依赖的变量没发生变化的时候不会进行计算，提高性能
+
+方法(methods), 不如计算属性(computed)高效，每次都要重新计算，没有缓冲机制
+
+侦听器(watch), 存在缓冲机制，依赖的变量没发生变化的时候不会进行计算，提高性能, 但是相比 computed 代码冗余
 
 
 
