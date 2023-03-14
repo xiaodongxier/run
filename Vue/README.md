@@ -230,6 +230,56 @@ Vue 判断两个节点是否相同时，主要是判断两者的`key`和`元素�
 
 ---
 
+## Vue的核心
+
+![Vue核心](https://gitcdn.xiaodongxier.com/image/20230313110837.jpg)
+
+- 数据驱动（MVVM)
+  - Model 模型层 - 处理业务逻辑和服务器端进行交互
+  - View  视图层 - 将数据模型转化为UI展示出来，可以简单理解为HTML页面
+  - ViewModel 视图模型层 - 连接 Model 和 View，是 Model 和 Vlew 之间的通信桥梁
+- 组件化 - **把图形，非图形的各种逻辑均抽象为一个统一的概念(组件)来实现开发的模式**
+  - 低耦合
+  - 可复用
+  - 高维护
+  - 提高开发效率
+
+
+## 对Vue的理解
+
+Vue是一套构建用户界面的渐进式自底向上增量开发的MVVM框架
+核心是关注视图层
+Vue核心是为了解决数据的绑定问题，为了开发大型单页面应用和组件化
+
+
+## Vue单项数据流
+
+父级的数据通过props传递给子组件，每次父组件发送变化的时候，子组件的props数据也会同时进行更新
+而子组件数据变化的时候不会导致父组件的更新，防止数据污染，影响其他组件的数据
+
+
+## Vue常用的修饰符
+
+![修饰符](https://gitcdn.xiaodongxier.com/image/20230313110813.jpg)
+
+
+## v-text, {{}}, v-html
+
+![v-text, {{}}, v-html](https://gitcdn.xiaodongxier.com/image/20230313111105.jpg)
+
+## Vue循环Key的作用
+
+Key 值的存在保证了唯一性，Vue 在执行时，会对节点进行检查如果没有 key 值，那么 vue 检查到这里有 dom 节点，就会对内容清空并赋新值，如果有 key 值存在，那么会对新老节点进行对比，比较两者 key是否相同，进行调换位置或删除操作
+
+
+## 计算属性 && 单页面优缺点 && Vuex
+
+![计算属性](https://gitcdn.xiaodongxier.com/image/20230313111802.jpg)
+
+Vuex就是Vue的状态管理工具，创建一个集中的数据存储，方便项目中的所有组件进行访问
+
+![vuex](https://gitcdn.xiaodongxier.com/image/20230313112134.jpg)
+
 
 ## 生命周期
 
@@ -246,7 +296,7 @@ https://gitcdn.xiaodongxier.com/pages/20221216181348.html
 
 ## 计算属性(computed)，方法(methods)，侦听器(watch)
 
-methods > watch > computed
+ computed > watch > methods
 
 计算属性(computed), 存在缓冲机制，依赖的变量没发生变化的时候不会进行计算，提高性能
 
