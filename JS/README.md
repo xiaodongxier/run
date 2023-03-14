@@ -153,7 +153,13 @@
    4. 节流是多次操作变成少量操作，防抖是只要最后一次操作
    5. 例如，都设置时间频率为500ms，在2秒时间内，频繁触发函数，节流，每隔 500ms 就执行一次。防抖，则不管调动多少次方法，在2s后，只会执行一次
       ![节流防抖](https://gitcdn.xiaodongxier.com/image/20230314215510.jpg)
-8. 
+8. Git
+   1. 查看分支：git branch
+   2. 创建分支：git branch name
+   3. 切换分支：git checkout
+   4. 创建+切换分支：git checkout -b name
+   5. 合并某分支到当前分支：git merge
+   6. 删除分支：git branch -d
 
 
 
@@ -172,3 +178,4 @@ es6
 疑难：
 箭头函数this
 apply、call 和 bind
+webpack 做过哪些优化，开发效率方面、打包策略方面等等
