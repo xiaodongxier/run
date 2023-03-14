@@ -1,19 +1,27 @@
 <!--
  * @Date: 2023-03-14 15:49:08
- * @LastEditTime: 2023-03-14 17:16:11
+ * @LastEditTime: 2023-03-14 21:43:16
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      height: 5000px;
+    }
+  </style>
 </head>
+
 <body>
+  <input type="text">
   <script>
     // console.log('undefined', typeof undefined ) // undefined
     // console.log('null', typeof null ) // object
@@ -49,7 +57,7 @@
     // console.log(toString.call(Symbol()))   //[object Symbol]
     // console.log(toString.call([]))   //[object Array]
     // console.log(toString.call({}))   //[object Object]
-    
+
     // var a = 10;
     // function app(){
     //   a = 20;
@@ -69,15 +77,53 @@
     // console.log(a)
 
 
-    function debug(fn, dele) {
-      var time = null;
-      return function(){
+    // function debug(fn, dele) {
+    //   var time = null;
+    //   return function(){
+    //     clearTimeout(time)
+    //     time = setTimeout(function(){
+    //         fn.apply(this, arguments)
+    //     },dele)
+    //   }
+    // }
+
+    // 控制次数 - 节流
+    // var a = true
+    // window.onscroll = function(){
+    //   if(a){
+    //     setTimeout(() => {
+    //       console.log("hello")
+    //       a = true
+    //     }, 500);
+    //   }
+    //   a = false
+    // }
+
+    // 最后一条为什么不会被清掉呢
+    // 因为0.5秒内没有input事件，没有触发函数
+    let inp = document.querySelector('input');
+    let time = null
+    inp.oninput = function () {
+      if (time !== null) {
         clearTimeout(time)
-        time = setTimeout(function(){
-            fn.apply(this, arguments)
-        },dele)
       }
+      time = setTimeout(() => {
+        console.log(this.value)
+      }, 500)
     }
+
+
+    // let inp = document.querySelector("input");
+    // let t = null;
+    // inp.oninput = function () {
+    //   if (t !== null) {
+    //     clearTimeout(t);
+    //   }
+    //   t = setTimeout(() => {
+    //     console.log(this.value);
+    //   }, 500)
+    // }
   </script>
 </body>
+
 </html>
