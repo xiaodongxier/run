@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 90%;
+      height: 200px;
+      outline: blanchedalmond1pxsolid;
+      margin: 10pxauto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 60px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .aa {
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      color: white;
+    }
+
+    .aa>div {
+      width: 60px;
+      height: 40px;
+    }
+
+    #target {
+      background-color: coral;
+    }
+
+    #home {
+      background-color: aqua;
+    }
+
+    #bullet {
+      width: 60px;
+    }
+
+    #bullet>div {
+      position: absolute;
+      left: calc(5%+20px);
+      width: 30px;
+      height: 10px;
+      background-color: dimgrey;
+    }
+
+    #hanxin {
+      text-align: center;
+      position: relative;
+      left: 0px;
+    }
+
+    .send {
+      animation: move1slinear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframesmove {
+      to {
+        left: calc(90%-35px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h2>节流</h2>
+    <button id="shoot">发射</button>
+    <text id="text1">子弹已就绪</text>
+    <div class="container">
+      <div id="bullet">手枪
+      </div>
+      <div class="aa" id="target">目标
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <h2>防抖</h2>
+    <button id="back">回城</button>
+    <text id="text2">英雄未回城</text>
+    <div class="container">
+      <div id="hanxin">韩信</div>
+      <div class="aa" id="home">泉水
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  letbullet = document.querySelector('#bullet');
+  lethanxin = document.querySelector('#hanxin');
+  letshoot = document.querySelector('#shoot');
+  letback = document.querySelector('#back');
+
+  lettext1 = document.querySelector('#text1')
+  lettext2 = document.querySelector('#text2')
+
+  //节流
+  //两个参数分别是要执行的回调函数，间隔时间
+  function throttle(fn, delay){
+    let flag = true;
+
+    return function(){
+      if (flag) {
+        flag = false;
+        text1.textContent = '子弹上膛中'
+        setTimeout(() => {
+          flag = true
+          text1.textContent = '子弹已就绪'
+        }, delay)
+        return fn()
+      }
+    }
+  }
+
+  //防抖
+  function debounce(fn, delay){
+    let timer = null;
+    return function(){
+      if (text2.textContent === '英雄已回城') {
+        return alert('韩信已经回城了，刷新页面再来试一下吧！')
+      }
+      if (timer) {
+        clearTimeout(timer)
+      }
+      text2.textContent = '英雄回城中'
+      timer = setTimeout(fn, delay)
+    }
+  }
+
+  //射击事件
+  function shooting(){
+    var zd = document.createElement("div")
+    bullet.appendChild(zd).classList.add('send')
+  }
+
+  //回城事件
+  function goHome(){
+    hanxin.style.left = 'calc(100%-60px)';
+    text2.textContent = '英雄已回城'
+  }
+
+  let a = throttle(shooting, 2000)
+  shoot.addEventListener('click', a)
+
+  let b = debounce(goHome, 3000)
+  back.addEventListener('click', b)
+</script>
+</html>
